@@ -5,7 +5,7 @@ const id= 0;
 module.exports= {
     create: (req, res) => {
         const { text, time} = req.body;
-        messages.push({ text, time, id });
+        messages.push({ id, text, time });
         id++;
         res.status(200).send( messages );
     },

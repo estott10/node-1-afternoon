@@ -11,10 +11,9 @@ app.use( express.static( __dirname + '/../public/build' ) );
 
 const mc= require( `./Controllers/messages_controller`);
 
+app.post(messagesBaseUrl, mc.create);
 
 app.get(messagesBaseUrl, mc.read);
-
-app.post(messagesBaseUrl, mc.create);
 
 app.put(`${messagesBaseUrl}/:id`, mc.update);
 
